@@ -69,7 +69,7 @@ router.get("/stats", verifyTokenAndAdmin,async(req,res)=>{
             {
                 $group:{
                     _id:"$month",
-                    total:{ $sum: "$total" },
+                    total:{ $count: { } },
                 }
             }
         ])
