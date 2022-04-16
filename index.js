@@ -27,5 +27,5 @@ app.use("/api/order",orderRouter)
 app.use("/api/checkout",stripeRouter)
 
 app.listen(port,()=>{
-    console.log("Backend server is running 2.0")
+    console.log("Backend server is running")
 })
