@@ -64,13 +64,13 @@ router.get("/stats", verifyTokenAndAdmin,async(req,res)=>{
             {
                 $project:{
                     month:{$month:"$createdAt"},
-                    total:1,
+                    quantity:{ $sum: 1 },
                 }
             },
             {
                 $group:{
                     _id:"$month",
-                    total:{ $sum: "$total" },
+                    total:{ $sum: "$quantity" },
                 }
             }
         ])
