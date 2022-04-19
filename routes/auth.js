@@ -25,6 +25,7 @@ router.post("/register", (req,res)=>{
         password:CryptoJS.AES.encrypt(
                              req.body.password,process.env.PASS_SEC
                              ).toString(),
+        img:req.body.img                     
     })
 
     newUser.save((err,doc)=>{
