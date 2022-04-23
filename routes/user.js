@@ -46,7 +46,7 @@ router.get("/find/:id",verifyTokenAndAuthorization,async(req,res)=>{
 router.get("/",verifyTokenAndAuthorization,async(req,res)=>{
     const query = req.query.new
     try{
-        const users= query ? await User.find().sort({_id:this.length}).limit(5) 
+        const users= query ? await User.find().sort({_id:1}).limit(5) 
         : await User.find()
             res.status(200).json(users)
     } catch(err){
